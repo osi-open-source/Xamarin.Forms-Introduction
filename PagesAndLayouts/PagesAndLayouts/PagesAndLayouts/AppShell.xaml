@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:PagesAndLayouts"
+       x:Class="PagesAndLayouts.AppShell">
+    <local:MainPage Title="Main Page XAML" />
+    <local:MainPageCode Title="Main Page Code" />
+    <local:StackPage Title="StackLayout Page" />
+    <local:GridPage Title="Grid Page" />
+    <local:AbsolutePage Title="AbsoluteLayout Page" />
+    <local:RelativePage Title="RelativeLayout Page" />
+    <local:FlexPage Title="FlexLayout Page" />
+</Shell>

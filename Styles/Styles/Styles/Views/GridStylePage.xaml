@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Styles.Views.GridStylePage"
+             Title="Grid Style"
+             Style="{StaticResource PageStyle}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label"
+                   x:Key="DefaultLabelStyle">
+                <Setter Property="HorizontalOptions"
+                        Value="Center" />
+                <Setter Property="TextColor"
+                        Value="Red" />
+                <Setter Property="VerticalOptions"
+                        Value="Center" />
+            </Style>
+
+            <Style TargetType="Label"
+                   BasedOn="{StaticResource DefaultLabelStyle}" />
+            
+            <Style TargetType="Label"
+                   x:Key="LargeLabelStyle"
+                   BasedOn="{StaticResource DefaultLabelStyle}">
+                <Setter Property="FontSize"
+                        Value="Large" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Text="Top Left" />
+
+        <Label Grid.Row="0"
+               Grid.Column="1"
+               Text="Top Center" />
+
+        <Label Grid.Row="0"
+               Grid.Column="2"
+               Text="Top Right" />
+
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Text="Left" />
+
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Text="Center"
+               Style="{d:StaticResource LargeLabelStyle}"/>
+
+        <Label Grid.Row="1"
+               Grid.Column="2"
+               Text="Right" />
+
+        <Label Grid.Row="2"
+               Grid.Column="0"
+               Text="Bottom Left" />
+
+        <Label Grid.Row="2"
+               Grid.Column="1"
+               Text="Bottom Center" />
+
+        <Label Grid.Row="2"
+               Grid.Column="2"
+               Text="Bottom Right" />
+    </Grid>
+
+</ContentPage>

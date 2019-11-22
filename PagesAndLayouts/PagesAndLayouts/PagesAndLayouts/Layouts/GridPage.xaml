@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PagesAndLayouts.GridPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Text="Top Left (0, 0)"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+        <Label Grid.Row="0"
+               Grid.Column="1"
+               Text="Top Center (0, 1)"
+               HorizontalOptions="Center"/>
+
+        <Label Grid.Row="0"
+               Grid.Column="2"
+               Text="Top Right (0, 2)"
+               HorizontalOptions="Center" />
+
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Text="Left (1, 0)"
+               HorizontalOptions="Center" />
+
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Text="Center (1, 1)"
+               HorizontalOptions="Center" />
+
+        <Label Grid.Row="1"
+               Grid.Column="2"
+               Text="Right (1, 2)"
+               HorizontalOptions="Center" />
+
+        <Label Grid.Row="2"
+               Grid.Column="0"
+               Text="Bottom Left (2, 0)"
+               HorizontalOptions="Center" />
+
+        <Label Grid.Row="2"
+               Grid.Column="1"
+               Text="Bottom Center (2, 1)"
+               HorizontalOptions="Center" />
+
+        <Label Grid.Row="2"
+               Grid.Column="2"
+               Text="Bottom Right (2, 2)"
+               HorizontalOptions="Center" />
+    </Grid>
+</ContentPage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Styles.Views.BasePage">
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label HorizontalOptions="CenterAndExpand"
+                       Text="This is a text coming from the base page." />
+                <ContentPresenter Grid.Row="1" />
+            </Grid>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+    
+</ContentPage>

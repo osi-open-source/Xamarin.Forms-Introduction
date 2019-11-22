@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:views="clr-namespace:Styles.Views"
+                xmlns:behaviors="clr-namespace:Styles.Behaviors"
+                x:Class="Styles.Views.FirstInheritedPage">
+    <StackLayout Orientation="Vertical">
+        <Label Text="Inherited Page 1" />
+        <Label Text="Enter a number:" />
+        <Entry>
+            <Entry.Behaviors>
+                <behaviors:NumericValidationBehavior Group="Example" Name="ErrorEffect"/>
+            </Entry.Behaviors>
+        </Entry>
+
+        <Label Text="Go to Image page"
+               BackgroundColor="AliceBlue"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                      Command="{Binding GoToImagePageCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+    </StackLayout>
+</views:BasePage>

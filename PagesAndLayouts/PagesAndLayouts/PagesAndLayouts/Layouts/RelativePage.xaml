@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PagesAndLayouts.RelativePage">
+    <RelativeLayout>
+        <Label x:Name="CenterLabel"
+               Text="Center"
+               FontSize="Header"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.5}"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.45}" />
+        <BoxView x:Name="LabelUnderlineBoxView"
+                 BackgroundColor="Red"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CenterLabel, Property=X, Factor=1}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CenterLabel, Property=Width, Factor=1}"
+                 HeightRequest="1" />
+    </RelativeLayout>
+</ContentPage>

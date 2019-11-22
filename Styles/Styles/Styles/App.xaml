@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Styles.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String"
+                        x:Key="IndieFlowerRegular">
+                <On Platform="Android"
+                    Value="IndieFlower-Regular.ttf#Indie Flower" />
+                <On Platform="iOS"
+                    Value="IndieFlower-Regular" />
+            </OnPlatform>
+            
+            <Style TargetType="Label">
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+                <Setter Property="FontFamily"
+                        Value="{StaticResource IndieFlowerRegular}" />
+            </Style>
+
+            <Style TargetType="ContentPage"
+                   x:Key="PageStyle">
+                <Setter Property="BackgroundColor"
+                        Value="Green" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
