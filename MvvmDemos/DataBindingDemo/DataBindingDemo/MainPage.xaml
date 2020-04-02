@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.MainPage"
+             Title="Bindings">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelSeparatorStyle"
+                   TargetType="Label">
+                <Setter Property="Margin"
+                        Value="0, 5, 0, 0" />
+                <Setter Property="FontSize"
+                        Value="Medium" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout Spacing="0"
+                 Margin="15">
+        <Label Text="Simple editor control with Name:" />
+        <Editor x:Name="textEntry" />
+
+        <Label Text="Label bound to above entry's Text property:"
+               Style="{StaticResource LabelSeparatorStyle}"/>
+        <Label Text="{Binding Text, Source={Reference textEntry}}"  />
+
+        <Label Text="Editor bound with OneWayToSource:"
+               Style="{StaticResource LabelSeparatorStyle}"/>
+        <Editor Text="{Binding BindingContext.Text, Mode=OneWayToSource}" />
+
+        <Label Text="Editor bound with OneWay:"
+               Style="{StaticResource LabelSeparatorStyle}" />
+        <Editor Text="{Binding BindingContext.Text, Mode=OneWay}" />
+
+        <Label Text="Editor bound with TwoWay:"
+               Style="{StaticResource LabelSeparatorStyle}" />
+        <Editor Text="{Binding TwoWayText, Mode=TwoWay}" />
+
+        <Label Text="Editor bound with default mode (TwoWay in Editor's case):"
+               Style="{StaticResource LabelSeparatorStyle}" />
+        <Editor Text="{Binding TwoWayText}" />
+
+        <Button Text="Clear Text"
+                Command="{Binding ClearTextCommand}" />
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:behaviors="clr-namespace:DataBindingDemo.Behaviors"
+             xmlns:local="clr-namespace:DataBindingDemo"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.CommandingPage"
+             Title="Commands">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:TextChangedEventArgsConverter x:Key="TextChangedArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Button Text="Open Dialog" 
+                Command="{Binding OpenDialogCommand}"/>
+        <Label Text="Input with Behavior attached:" />
+        <Editor Text="{Binding Text}"
+                TextChanged="Editor_TextChanged">
+            <Editor.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="TextChanged"
+                                                  Command="{Binding TextChangedCommand}"
+                                                  Converter="{StaticResource TextChangedArgsConverter}" />
+            </Editor.Behaviors>
+        </Editor>
+        <local:RoundedButton Text="Custom Button"
+                             Command="{Binding OpenDialogCommand}"
+                             CommandParameter="This is a rounded button!" />
+        <Label Text="Replaced!">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ReplaceLabelCommand}"
+                                      CommandParameter="Replaced!" />
+            </Label.GestureRecognizers>
+        </Label>
+    </StackLayout>
+</ContentPage>
